@@ -20,7 +20,7 @@ docker-compose up -d
 ## Use
 
 ### 1. For add Virtual Host 
-Edit file ``Caddyfile``  and add file ``vhost/``.
+Edit file ``Caddyfile`` , add file ``vhost/*.conf`` and exec ``docker-compose restart php56 php73 caddy``.
 
 ### 2. For add FTP user
 ```
