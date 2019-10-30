@@ -23,8 +23,13 @@ docker-compose up -d
 Edit file ``Caddyfile`` , add file ``vhost/*.conf`` and exec ``docker-compose restart php56 php73 caddy``.
 
 ### 2. For add FTP user
+Linux
 ```
 (echo EXAMPLE-PASSWORD; echo EXAMPLE-PASSWORD) | docker exec -i andypanel_ftpd_1 /usr/bin/pure-pw useradd EXAMPLE-USERNAME -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -d /www/EXAMPLE-DIRECTORY-NAME -u www-data -g www-data
+```
+Windows
+```
+docker exec -i andypanel_ftpd_1 /usr/bin/pure-pw useradd EXAMPLE-USERNAME -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -d /www/EXAMPLE-DIRECTORY-NAME -u www-data -g www-data
 ```
 replace ``EXAMPLE-USERNAME``, ``EXAMPLE-PASSWORD``, ``EXAMPLE-DIRECTORY-NAME`` to your needs.
 
