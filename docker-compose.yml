@@ -18,7 +18,8 @@ services:
       - '8080:8080'
 
   php56:
-    build: ./dockerfile/php56
+    image: mingfunwong/andypanel:php56
+    # build: ./dockerfile/php56
     restart: always
     volumes:
       - './www:/var/www'
@@ -26,7 +27,8 @@ services:
       - './logs/php56:/var/log/apache2'
 
   php73:
-    build: ./dockerfile/php73
+    image: mingfunwong/andypanel:php73
+    # build: ./dockerfile/php73
     restart: always
     volumes:
       - './www:/var/www'
