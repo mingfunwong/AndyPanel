@@ -1,0 +1,12 @@
+{
+  "web": [
+    {
+      "name": "example",
+      "alias": "example.lvh.me",
+      "varsion": "php74",
+      "desc": "示例站点",
+      "createTime": "2020-01-00T00:00:00.000Z",
+      "updateTime": "2020-01-00T00:00:00.000Z"
+    }
+  ]
+}

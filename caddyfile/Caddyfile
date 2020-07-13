@@ -1,0 +1,11 @@
+example.lvh.me:80 {
+      proxy / http://php74:80 {
+        transparent
+      }
+      log / stdout
+      log / /var/log/access.log "{combined}" {
+        rotate_size 100
+        rotate_compress
+      }
+    }
+
