@@ -1,5 +1,6 @@
 # AndyPanel
-PHP development environment for Docker Container Platform.
+Virtual host management panel for Docker Container Platform.
+![AndyPanel](./panel/image.png)
 
 ## Includes
 PHP 5.6 ,
@@ -11,34 +12,18 @@ Pure-FTPd .
 
 ## Install
 
-```
+```bash
 git clone https://github.com/mingfunwong/AndyPanel.git
-cd AndyPanel
+cd ./AndyPanel
+vi ./docker-compose.yml # set MYSQL_ROOT_PASSWORD
+cp ./panel/server/.env.example ./panel/server/.env
+vi ./panel/server/.env # set LOGIN_USERNAME LOGIN_PASSWORD MYSQL_PASSWORD JWT_SECRET
 docker-compose up -d
 ```
 
-## Use
-
-### 1. For add Virtual Host 
-Edit file ``Caddyfile`` , add file ``vhost/*.conf`` and exec ``docker-compose restart php56 php73 caddy``.
-
-### 2. For add FTP user
-Linux
-```
-(echo EXAMPLE-PASSWORD; echo EXAMPLE-PASSWORD) | docker exec -i andypanel_ftpd_1 /usr/bin/pure-pw useradd EXAMPLE-USERNAME -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -d /www/EXAMPLE-DIRECTORY-NAME -u www-data -g www-data
-```
-Windows
-```
-docker exec -i andypanel_ftpd_1 /usr/bin/pure-pw useradd EXAMPLE-USERNAME -f /etc/pure-ftpd/passwd/pureftpd.passwd -m -d /www/EXAMPLE-DIRECTORY-NAME -u www-data -g www-data
-```
-replace ``EXAMPLE-USERNAME``, ``EXAMPLE-PASSWORD``, ``EXAMPLE-DIRECTORY-NAME`` to your needs.
-
-### 3. Access Service
-For PHP 5.6 PHP-INFO http://php56.lvh.me/phpinfo.php
-
-For PHP 7.4 PHP-INFO http://php74.lvh.me/phpinfo.php
-
-For Adminer http://localhost:8080 Server: mysql Username: root Password: root
+### Guide
+Open `http://localhost:8888/` access Control panel.  
+Open `http://localhost:8080/` access MySQL Adminer panel.  
 
 ## Author
 [Mingfun Wong](https://github.com/mingfunwong)

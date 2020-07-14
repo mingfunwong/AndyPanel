@@ -4,6 +4,7 @@ import config from "../config/config";
 
 
 const requestLogger = (request: any, response: any, next: any) => {
+  logger.info("Date:  ", new Date().toJSON());
   logger.info("Method:", request.method);
   logger.info("Path:  ", request.path);
   logger.info("Body:  ", request.body);

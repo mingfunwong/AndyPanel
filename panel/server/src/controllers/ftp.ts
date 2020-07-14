@@ -1,7 +1,6 @@
 import express from "express";
 import { requireLogged } from "../utils/login";
 import child_process from 'child_process'
-import { add, remove } from "lodash";
 const execSync = child_process.execSync;
 
 const low = require("lowdb");
@@ -44,7 +43,7 @@ ftpRouter.delete("/", async (request, response) => {
   const body = request.body;
   const { name } = body;
   if (db.get("ftp").remove({ name }).write()) {
-    remove(name);
+    removeFTP(name);
     response.json({ type: "success", message: "删除 FTP 成功" });
   } else {
     throw Error("FTP 不存在");
