@@ -5,7 +5,7 @@
         :model="loginForm"
         ref="loginForm"
         label-width="50px"
-        style="margin: 30vh auto;width:300px"
+        style="margin: 30vh auto 0 auto;width:300px"
       >
         <el-form-item>
           <h1 style="text-align: center">登录</h1>

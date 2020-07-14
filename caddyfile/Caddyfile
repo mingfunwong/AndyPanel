@@ -1,4 +1,5 @@
-example.lvh.me:80 {
+example.lvh.me:80,
+example21.lvh.me:80 {
       proxy / http://php74:80 {
         transparent
       }

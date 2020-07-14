@@ -3,7 +3,7 @@ PHP development environment for Docker Container Platform.
 
 ## Includes
 PHP 5.6 ,
-PHP 7.3 ,
+PHP 7.4 ,
 MySQL 8 ,
 Adminer ,
 Caddy ,
@@ -36,7 +36,7 @@ replace ``EXAMPLE-USERNAME``, ``EXAMPLE-PASSWORD``, ``EXAMPLE-DIRECTORY-NAME`` t
 ### 3. Access Service
 For PHP 5.6 PHP-INFO http://php56.lvh.me/phpinfo.php
 
-For PHP 7.3 PHP-INFO http://php73.lvh.me/phpinfo.php
+For PHP 7.4 PHP-INFO http://php74.lvh.me/phpinfo.php
 
 For Adminer http://localhost:8080 Server: mysql Username: root Password: root
 

@@ -50,7 +50,7 @@ services:
     image: stilliard/pure-ftpd:hardened
     restart: always
     ports:
-      - 21:21
+      - '21:21'
       - 30000-30100:30000-30100
     volumes:
       - ./ftp/MinUID:/etc/pure-ftpd/conf/MinUID

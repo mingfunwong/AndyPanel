@@ -56,7 +56,7 @@ webRouter.delete("/", async (request, response) => {
     restartDocker();
     response.json({ type: "success", message: "删除虚拟主机成功" });
   } else {
-    response.json({ type: "error", message: "虚拟主机不存在" });
+    throw Error("虚拟主机不存在");
   }
 });
 

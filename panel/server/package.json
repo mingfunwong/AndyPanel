@@ -20,6 +20,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/mysql": "^2.15.15",
     "axios": "^0.19.2",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
@@ -29,6 +30,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.19",
     "lowdb": "^1.0.0",
+    "mysql": "^2.18.1",
     "reflect-metadata": "^0.1.13",
     "tsc": "^1.20150623.0"
   },
