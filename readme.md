@@ -10,6 +10,12 @@ Adminer ,
 Caddy ,
 Pure-FTPd .
 
+## Supported platforms
+Windows 10 ( latest only ), macOS, Ubuntu, CentOS, Linux, Unix.
+
+## Prerequisites
+Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
+
 ## Install
 
 ```bash
@@ -17,13 +23,13 @@ git clone https://github.com/mingfunwong/AndyPanel.git
 cd ./AndyPanel
 vi ./docker-compose.yml # set MYSQL_ROOT_PASSWORD
 cp ./panel/server/.env.example ./panel/server/.env
-vi ./panel/server/.env # set LOGIN_USERNAME LOGIN_PASSWORD MYSQL_PASSWORD JWT_SECRET
+vi ./panel/server/.env # set LOGIN_USERNAME LOGIN_PASSWORD MYSQL_PASSWORD(same MYSQL_ROOT_PASSWORD) JWT_SECRET(Random string)
 docker-compose up -d
 ```
 
 ### Guide
-Open `http://localhost:8888/` access Control panel.  
-Open `http://localhost:8080/` access MySQL Adminer panel.  
+`http://localhost:8888/` access Control panel. ( Username: ``LOGIN_USERNAME``, Password: ``LOGIN_PASSWORD`` )  
+`http://localhost:8080/` access MySQL Adminer panel. ( Server: ``db``, Username: ``root``, Password: ``MYSQL_ROOT_PASSWORD`` )
 
 ## Author
 [Mingfun Wong](https://github.com/mingfunwong)

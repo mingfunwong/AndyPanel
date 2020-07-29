@@ -39,8 +39,8 @@
         </el-form-item>
         <el-form-item label="版本">
           <el-select v-model="web.varsion" placeholder="版本">
-            <el-option label="php57" value="php57"></el-option>
-            <el-option label="php74" value="php74"></el-option>
+            <el-option label="PHP 5.7" value="php57"></el-option>
+            <el-option label="PHP 7.4" value="php74"></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="备注">
