@@ -94,7 +94,14 @@
       <el-table :data="webList" stripe>
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column prop="name" label="名字"></el-table-column>
-        <el-table-column prop="alias" label="绑定域名"></el-table-column>
+        <el-table-column prop="alias" label="绑定域名">
+          <template slot-scope="scope">
+            <span v-for="site in scope.row.alias.split(' ')" :key="site">
+              <el-link :href="'http://'+site" target="_blank" type="primary">{{site}}</el-link>
+              {{ ' ' }}
+            </span>
+          </template>
+        </el-table-column>
         <el-table-column prop="varsion" label="运行环境">
           <template slot-scope="scope">{{scope.row.varsion | webVarsionName}}</template>
         </el-table-column>

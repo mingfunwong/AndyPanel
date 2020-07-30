@@ -8,6 +8,7 @@ function request(url, data = {}, method = "GET") {
     const loadingInstance = Loading.service();
     axios({
       url
+      // , baseURL: 'http://172.25.149.103:8888/'
       , data
       , method
       , headers: {
