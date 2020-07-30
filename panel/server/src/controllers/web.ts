@@ -98,15 +98,15 @@ function saveCaddyfile() {
     });
     const domainString = domainList.map((item: string) => `${item}:80`).join(',\n');
     data += `${domainString} {
-      proxy / http://${varsion}:80 {
-        transparent
-      }
-      log / stdout
-      log / /var/log/access.log "{combined}" {
-        rotate_size 100
-        rotate_compress
-      }
-    }
+  proxy / http://${varsion}:80 {
+    transparent
+  }
+  log / stdout
+  log / /var/log/access.log "{combined}" {
+    rotate_size 100
+    rotate_compress
+  }
+}
 
 `;
   })

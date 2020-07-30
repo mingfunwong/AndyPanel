@@ -37,10 +37,14 @@
             <el-input v-model="web.alias" placeholder="绑定域名"></el-input>
           </el-tooltip>
         </el-form-item>
-        <el-form-item label="版本">
-          <el-select v-model="web.varsion" placeholder="版本">
-            <el-option label="PHP 5.7" value="php57"></el-option>
-            <el-option label="PHP 7.4" value="php74"></el-option>
+        <el-form-item label="运行环境">
+          <el-select v-model="web.varsion" placeholder="运行环境">
+            <el-option
+              :label="webVarsion.label"
+              :value="webVarsion.value"
+              v-for="webVarsion in webVarsions"
+              :key="webVarsion.value"
+            ></el-option>
           </el-select>
         </el-form-item>
         <el-form-item label="备注">
@@ -91,7 +95,9 @@
         <el-table-column type="index" label="#"></el-table-column>
         <el-table-column prop="name" label="名字"></el-table-column>
         <el-table-column prop="alias" label="绑定域名"></el-table-column>
-        <el-table-column prop="varsion" label="版本"></el-table-column>
+        <el-table-column prop="varsion" label="运行环境">
+          <template slot-scope="scope">{{scope.row.varsion | webVarsionName}}</template>
+        </el-table-column>
         <el-table-column prop="desc" label="备注"></el-table-column>
         <el-table-column prop="time" label="时间">
           <template slot-scope="scope">
@@ -196,35 +202,41 @@ import request from "./utils/request";
 import globalData from "./utils/global_data";
 import dayjs from "dayjs";
 
+const webVarsions = [
+  { label: "PHP 5.7", value: "php57" },
+  { label: "PHP 7.4", value: "php74" },
+];
+
 export default {
   name: "app",
   data() {
     return {
       token: "",
+      webVarsions,
       loginForm: {
         username: "",
-        password: ""
+        password: "",
       },
       web: {
         name: "example",
         alias: "example.lvh.me",
-        varsion: "php74",
-        desc: "示例站点"
+        varsion: "php57",
+        desc: "示例站点",
       },
       mysql: {
         name: "example",
         password: "example123",
-        desc: "示例 MySQL"
+        desc: "示例 MySQL",
       },
       ftp: {
         name: "example",
         password: "example123",
         path: "example",
-        desc: "示例 FTP"
+        desc: "示例 FTP",
       },
       webList: [],
       mysqlList: [],
-      ftpList: []
+      ftpList: [],
     };
   },
   async created() {
@@ -243,7 +255,7 @@ export default {
       globalData.set("token", token);
       this.$message({
         type: "success",
-        message: "登录成功"
+        message: "登录成功",
       });
       this.getWebList();
       this.getMySQLList();
@@ -309,7 +321,7 @@ export default {
       this.$confirm("是否要删除所选域名？", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       }).then(async () => {
         const message = await request.delete("/api/web", row);
         if (message.type == "success") {
@@ -321,7 +333,7 @@ export default {
       this.$confirm("是否要删除所选 MySQL？", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       }).then(async () => {
         const message = await request.delete("/api/mysql", row);
         if (message.type == "success") {
@@ -333,20 +345,23 @@ export default {
       this.$confirm("是否要删除所选 FTP？", "提示", {
         confirmButtonText: "确定",
         cancelButtonText: "取消",
-        type: "warning"
+        type: "warning",
       }).then(async () => {
         const message = await request.delete("/api/ftp", row);
         if (message.type == "success") {
           this.getFTPList();
         }
       });
-    }
+    },
   },
   filters: {
     formatDate(time) {
       return dayjs(time).format("YYYY-MM-DD HH:mm");
-    }
-  }
+    },
+    webVarsionName(value) {
+      return webVarsions.find((item) => item.value === value).label;
+    },
+  },
 };
 </script>
 
