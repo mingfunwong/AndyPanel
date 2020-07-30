@@ -203,7 +203,7 @@ import globalData from "./utils/global_data";
 import dayjs from "dayjs";
 
 const webVarsions = [
-  { label: "PHP 5.7", value: "php57" },
+  { label: "PHP 5.6", value: "php56" },
   { label: "PHP 7.4", value: "php74" },
 ];
 
@@ -220,7 +220,7 @@ export default {
       web: {
         name: "example",
         alias: "example.lvh.me",
-        varsion: "php57",
+        varsion: "php56",
         desc: "示例站点",
       },
       mysql: {
