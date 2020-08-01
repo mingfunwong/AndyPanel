@@ -11,7 +11,7 @@ Caddy ,
 Pure-FTPd .
 
 ## Supported platforms
-Windows 10 ( Need WSL2 ), macOS, Ubuntu, CentOS, Linux, Unix.
+Windows 10 ( include WSL2 ), macOS, Ubuntu, CentOS, Linux, Unix.
 
 ## Prerequisites
 Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](https://docs.docker.com/compose/install/).
