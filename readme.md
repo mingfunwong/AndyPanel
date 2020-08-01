@@ -21,15 +21,15 @@ Install [Docker](https://docs.docker.com/engine/install/) and [Docker Compose](h
 ```bash
 git clone https://github.com/mingfunwong/AndyPanel.git
 cd ./AndyPanel
-vi ./docker-compose.yml # set MYSQL_ROOT_PASSWORD
 cp ./panel/server/.env.example ./panel/server/.env
+vi ./docker-compose.yml # set MYSQL_ROOT_PASSWORD
 vi ./panel/server/.env # set LOGIN_USERNAME LOGIN_PASSWORD MYSQL_PASSWORD(same MYSQL_ROOT_PASSWORD) JWT_SECRET(Random string)
 docker-compose up -d
 ```
 
 ### Guide
 `http://localhost:8888/` access Control panel. ( Username: ``LOGIN_USERNAME``, Password: ``LOGIN_PASSWORD`` )  
-`http://localhost:8080/` access MySQL Adminer panel. ( Server: ``db``, Username: ``root``, Password: ``MYSQL_ROOT_PASSWORD`` )
+`http://localhost:8080/` access MySQL Adminer panel. ( Server: ``mysql``, Username: ``root``, Password: ``MYSQL_ROOT_PASSWORD`` )
 
 ## Author
 [Mingfun Wong](https://github.com/mingfunwong)
