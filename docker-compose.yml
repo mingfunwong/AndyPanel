@@ -24,6 +24,7 @@ services:
       - ./www:/var/www
       - ./vhost:/etc/apache2/sites-enabled
       - ./logs/php56:/var/log/apache2
+      - ./config/php.ini:/usr/local/etc/php/php.ini
 
   php74:
     image: mingfunwong/andypanel:php74
@@ -33,6 +34,7 @@ services:
       - ./www:/var/www
       - ./vhost:/etc/apache2/sites-enabled
       - ./logs/php74:/var/log/apache2
+      - ./config/php.ini:/usr/local/etc/php/php.ini
 
   caddy:
     image: abiosoft/caddy:latest
