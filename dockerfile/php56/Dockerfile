@@ -1,7 +1,5 @@
 FROM php:5.6-apache
 
-ADD ./php.ini /usr/local/etc/php/php.ini
-
 RUN apt-get update \
   && apt-get install -y libpng-dev libjpeg-dev libfreetype6-dev \
   && docker-php-ext-configure gd \ 
