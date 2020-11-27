@@ -212,6 +212,7 @@ import dayjs from "dayjs";
 const webVarsions = [
   { label: "PHP 5.6", value: "php56" },
   { label: "PHP 7.4", value: "php74" },
+  { label: "PHP 8.0", value: "php80" },
 ];
 
 export default {

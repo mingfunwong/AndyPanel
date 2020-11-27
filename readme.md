@@ -5,6 +5,7 @@ Virtual host management panel for Docker Container Platform.
 ## Includes
 PHP 5.6 ,
 PHP 7.4 ,
+PHP 8.0 ,
 MySQL 8 ,
 Adminer ,
 Caddy ,

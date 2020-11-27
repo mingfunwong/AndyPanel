@@ -36,6 +36,16 @@ services:
       - ./logs/php74:/var/log/apache2
       - ./config/php.ini:/usr/local/etc/php/php.ini
 
+  php80:
+    image: mingfunwong/andypanel:php80
+    # build: ./dockerfile/php80
+    restart: always
+    volumes:
+      - ./www:/var/www
+      - ./vhost:/etc/apache2/sites-enabled
+      - ./logs/php80:/var/log/apache2
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+
   caddy:
     image: abiosoft/caddy:latest
     restart: always
