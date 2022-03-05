@@ -227,7 +227,7 @@ export default {
       },
       web: {
         name: "example",
-        alias: "example.lvh.me",
+        alias: "example.127.0.0.1.nip.io",
         varsion: "php56",
         desc: "示例站点",
       },
