@@ -25,7 +25,7 @@ cd ./AndyPanel
 cp ./panel/server/.env.example ./panel/server/.env
 vi ./docker-compose.yml # set MYSQL_ROOT_PASSWORD
 vi ./panel/server/.env # set LOGIN_USERNAME LOGIN_PASSWORD MYSQL_PASSWORD(same MYSQL_ROOT_PASSWORD) JWT_SECRET(Random string)
-docker-compose up -d
+sudo docker-compose up -d
 ```
 
 ### Guide
